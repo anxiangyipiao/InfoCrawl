@@ -15,7 +15,7 @@ def index():
     
     return render_template('index.html',info=info, spiders=spiders)
 
-@main.route('/detail_info')
+@main.route('/details')
 def getDetailInfo():
     # 获取分页数据
     page = int(request.args.get('page', 1))

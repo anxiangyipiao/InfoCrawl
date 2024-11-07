@@ -6,34 +6,106 @@
     <title>Log Collection Dashboard</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .sidebar {
+            background-color: #2c3e50;
+            color: white;
+            width: 12%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: all 0.3s;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+       
+        .sidebar a {
+            color: white;
+            font: 1em sans-serif;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a i {
+            margin-right: 10px;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+        .sidebar a.active {
+            background-color: #1abc9c;
+            color: white;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            margin-left: 250px;
+        }
+        .dashboard-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            /* padding: 10px; */
         }
         .card {
-            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+
         }
-        .card-title {
-            font-size: 1.5rem;
+        .card .icon {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
         }
-        .card-value {
-            font-size: 2.5rem;
+        .card .icon i {
+            font-size: 24px;
+            color: #007bff;
+        }
+        .card-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            font-size: 24px;
             font-weight: bold;
-            margin-top: 10px;
-        }
-        .card-footer {
-            background-color: #f8f9fa;
-            border-top: 1px solid #dee2e6;
+            color: #007bff;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="/" class="{% if request.path == '/' %}active{% endif %}"><i class="fas fa-home"></i> 主页</a></li>
+            <li><a href="/details" class="{% if request.path == '/details' %}active{% endif %}"><i class="fas fa-list-ul"></i> 日志</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
         {% block content %}
         {% endblock %}
     </div>

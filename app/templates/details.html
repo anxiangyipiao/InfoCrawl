@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Detailed Log Collection Data</h1>
+<h1 class="text-center mb-4">Detailed Log Collection Data</h1>
 
 <div class="card">
     <div class="card-body">
@@ -21,6 +21,7 @@
                     <th>Last Time</th>
                     <th>Run Time</th>
                     <th>Crawl Count</th>
+                    <th>Failed URLs</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,19 +40,26 @@
                     <td>{{ data.last_time }}</td>
                     <td>{{ data.run_time }}</td>
                     <td>{{ data.crawl_count }}</td>
+                    <td>
+                        <ul>
+                            {% for url in data.failed_urls %}
+                            <li>{{ url }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <div class="pagination">
+        <div class="pagination d-flex justify-content-center">
             {% if current_page > 1 %}
-            <a href="?page={{ current_page - 1 }}">Previous</a>
+            <a href="?page={{ current_page - 1 }}" class="btn btn-primary mr-2">Previous</a>
             {% endif %}
             {% for i in range(1, total_pages + 1) %}
-            <a href="?page={{ i }}" {% if i == current_page %}class="active"{% endif %}>{{ i }}</a>
+            <a href="?page={{ i }}" class="btn btn-secondary {% if i == current_page %}active{% endif %}">{{ i }}</a>
             {% endfor %}
             {% if current_page < total_pages %}
-            <a href="?page={{ current_page + 1 }}">Next</a>
+            <a href="?page={{ current_page + 1 }}" class="btn btn-primary ml-2">Next</a>
             {% endif %}
         </div>
     </div>
