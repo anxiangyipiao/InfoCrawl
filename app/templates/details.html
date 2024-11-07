@@ -40,19 +40,19 @@
                 <table class="table table-striped table-bordered">
                     <thead >
                         <tr>
-                            <th>Name</th>
-                            <th>Source</th>
-                            <th>Site Name</th>
-                            <th>Time</th>
-                            <th>Today All Requests</th>
-                            <th>Today Success Requests</th>
-                            <th>Today Fail Requests</th>
-                            <th>This Time All Requests</th>
-                            <th>This Time Success Requests</th>
-                            <th>This Time Fail Requests</th>
-                            <th>Last Time</th>
-                            <th>Run Time</th>
-                            <th>Crawl Count</th>
+                            <th>爬虫名称</th>
+                            <th>来源</th>
+                            <th>网站</th>
+                            <!-- <th>运行时间</th> -->
+                            <th>今天总更新</th>
+                            <th>今天成功</th>
+                            <th>今天失败</th>
+                            <th>本次总更新</th>
+                            <th>本次成功</th>
+                            <th>本次失败</th>
+                            <th>最后运行时间</th>
+                            <th>运行时间</th>
+                            <th>爬取次数</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,7 +61,7 @@
                             <td>{{ data.name }}</td>
                             <td>{{ data.source }}</td>
                             <td>{{ data.site_name }}</td>
-                            <td>{{ data.time }}</td>
+                            <!-- <td>{{ data.time }}</td> -->
                             <td>{{ data.today_all_request }}</td>
                             <td>{{ data.today_success_request }}</td>
                             <td>{{ data.today_fail_request }}</td>

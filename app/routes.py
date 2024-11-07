@@ -26,11 +26,11 @@ def getDetailInfo():
     total_pages = (count + PAGE_SIZE - 1) // PAGE_SIZE   
     return render_template('details.html', datas=datas, count=count, total_pages=total_pages, current_page=page)
 
-@main.route('/running_spiders')
-def running_spiders_route():
-    # 获取正在运行的爬虫
-    spiders = running_spiders()
-    return render_template('running_spiders.html', spiders=spiders)
+# @main.route('/running')
+# def running_spiders_route():
+#     # 获取正在运行的爬虫
+#     spiders = running_spiders()
+#     return render_template('running_spiders.html', spiders=spiders)
 
 @main.route('/failed_urls')
 def get_failed_urls():
