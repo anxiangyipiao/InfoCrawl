@@ -1,7 +1,6 @@
 from app.utils.RedisManage import RedisConnectionManager
 from datetime import datetime, timedelta
 import json
-import time
 
 task_redis_server = RedisConnectionManager.get_connection()
 sorted_set_key = 'key_sorted_set'
