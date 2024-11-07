@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redis Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redis Data</h1>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{ data.name }}</td>
+            </tr>
+            <tr>
+                <td>Source</td>
+                <td>{{ data.source }}</td>
+            </tr>
+            <tr>
+                <td>Site Name</td>
+                <td>{{ data.site_name }}</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>{{ data.time }}</td>
+            </tr>
+            <tr>
+                <td>Today All Requests</td>
+                <td>{{ data.today_all_request }}</td>
+            </tr>
+            <tr>
+                <td>Today Success Requests</td>
+                <td>{{ data.today_success_request }}</td>
+            </tr>
+            <tr>
+                <td>Today Fail Requests</td>
+                <td>{{ data.today_fail_request }}</td>
+            </tr>
+            <tr>
+                <td>This Time All Requests</td>
+                <td>{{ data.this_time_all_request }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
