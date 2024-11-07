@@ -1,8 +1,6 @@
 from app.server.LogCollectionService import LogCollectionService
 
 
-
-
 def get_detal_data(page=1, PAGE_SIZE=10):
         """
         获取分页数据
