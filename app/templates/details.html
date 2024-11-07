@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Detailed Log Collection Data</h1>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Source</th>
+                    <th>Site Name</th>
+                    <th>Time</th>
+                    <th>Today All Requests</th>
+                    <th>Today Success Requests</th>
+                    <th>Today Fail Requests</th>
+                    <th>This Time All Requests</th>
+                    <th>This Time Success Requests</th>
+                    <th>This Time Fail Requests</th>
+                    <th>Last Time</th>
+                    <th>Run Time</th>
+                    <th>Crawl Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in datas %}
+                <tr>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.source }}</td>
+                    <td>{{ data.site_name }}</td>
+                    <td>{{ data.time }}</td>
+                    <td>{{ data.today_all_request }}</td>
+                    <td>{{ data.today_success_request }}</td>
+                    <td>{{ data.today_fail_request }}</td>
+                    <td>{{ data.this_time_all_request }}</td>
+                    <td>{{ data.this_time_success_request }}</td>
+                    <td>{{ data.this_time_fail_request }}</td>
+                    <td>{{ data.last_time }}</td>
+                    <td>{{ data.run_time }}</td>
+                    <td>{{ data.crawl_count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination">
+            {% if current_page > 1 %}
+            <a href="?page={{ current_page - 1 }}">Previous</a>
+            {% endif %}
+            {% for i in range(1, total_pages + 1) %}
+            <a href="?page={{ i }}" {% if i == current_page %}class="active"{% endif %}>{{ i }}</a>
+            {% endfor %}
+            {% if current_page < total_pages %}
+            <a href="?page={{ current_page + 1 }}">Next</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

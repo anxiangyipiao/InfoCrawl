@@ -1,103 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log Collection Data</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .pagination a {
-            padding: 8px 16px;
-            text-decoration: none;
-            color: black;
-            border: 1px solid #ddd;
-            margin: 0 4px;
-        }
-        .pagination a:hover {
-            background-color: #ddd;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Log Collection Data</h1>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Source</th>
-                <th>Site Name</th>
-                <th>Time</th>
-                <th>Today All Requests</th>
-                <th>Today Success Requests</th>
-                <th>Today Fail Requests</th>
-                <th>This Time All Requests</th>
-                <th>This Time Success Requests</th>
-                <th>This Time Fail Requests</th>
-                <th>Last Time</th>
-                <th>Run Time</th>
-                <th>Crawl Count</th>
-                <th>Failed URLs</th>
-            </tr>
-            {% for data in datas %}
-            <tr>
-                <td>{{ data.name }}</td>
-                <td>{{ data.source }}</td>
-                <td>{{ data.site_name }}</td>
-                <td>{{ data.time }}</td>
-                <td>{{ data.today_all_request }}</td>
-                <td>{{ data.today_success_request }}</td>
-                <td>{{ data.today_fail_request }}</td>
-                <td>{{ data.this_time_all_request }}</td>
-                <td>{{ data.this_time_success_request }}</td>
-                <td>{{ data.this_time_fail_request }}</td>
-                <td>{{ data.last_time }}</td>
-                <td>{{ data.run_time }}</td>
-                <td>{{ data.crawl_count }}</td>
-                <td>
-                    <ul>
-                        {% for url in data.failed_urls %}
-                        <li>{{ url }}</li>
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
-        <div class="pagination">
-            {% if current_page > 1 %}
-            <a href="?page={{ current_page - 1 }}">Previous</a>
-            {% endif %}
-            {% for i in range(1, total_pages + 1) %}
-            <a href="?page={{ i }}" {% if i == current_page %}class="active"{% endif %}>{{ i }}</a>
-            {% endfor %}
-            {% if current_page < total_pages %}
-            <a href="?page={{ current_page + 1 }}">Next</a>
-            {% endif %}
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Log Collection Dashboard</h1>
+
+<div class="row">
+    <!-- Today All Requests -->
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Today All Requests</h5>
+                <p class="card-value">{{ info.today_all_request }}</p>
+            </div>
         </div>
     </div>
-</body>
-</html>
+
+    <!-- Today Success Requests -->
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Today Success Requests</h5>
+                <p class="card-value">{{ info.today_success_request }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Today Fail Requests -->
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Today Fail Requests</h5>
+                <p class="card-value">{{ info.today_fail_request }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Running Spiders -->
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Running Spiders</h5>
+                <p class="card-value">{{ spiders|length }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

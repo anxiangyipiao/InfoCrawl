@@ -1,7 +1,7 @@
 from app.utils.RedisManage import RedisConnectionManager
 from datetime import datetime, timedelta
 import json
-
+import time
 
 task_redis_server = RedisConnectionManager.get_connection()
 sorted_set_key = 'key_sorted_set'
@@ -63,6 +63,7 @@ class LogCollectionService(object):
     @classmethod
     def get_key_by_today(cls):
         # 获取今天所有数据
+           
             now = datetime.now()
             start_of_today = now.replace(hour=0, minute=0, second=0, microsecond=0)
             end_of_today = start_of_today + timedelta(days=1) - timedelta(microseconds=1)
@@ -88,7 +89,7 @@ class LogCollectionService(object):
             today_all_request += data['today_all_request']
             today_success_request += data['today_success_request']
             today_fail_request += data['today_fail_request']
-            all_failed_urls.extend(data['failed_urls'])
+            # all_failed_urls.extend(data['failed_urls'])
 
         return today_all_request, today_success_request, today_fail_request, all_failed_urls
     
