@@ -10,7 +10,7 @@ main = Blueprint('main', __name__)
 def index():
     # 获取分页数据
     page = int(request.args.get('page', 1))
-    PAGE_SIZE = 10
+    PAGE_SIZE = int(request.args.get('page', 10))
     datas, count = get_detal_data(page, PAGE_SIZE)
     
     # 分页信息

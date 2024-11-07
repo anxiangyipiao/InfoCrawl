@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redis Data</title>
+    <title>Log Collection Data</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
         table {
@@ -25,49 +25,49 @@
         th {
             background-color: #f2f2f2;
         }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            padding: 8px 16px;
+            text-decoration: none;
+            color: black;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+        .pagination a:hover {
+            background-color: #ddd;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Redis Data</h1>
+        <h1>Log Collection Data</h1>
         <table>
             <tr>
                 <th>Key</th>
                 <th>Value</th>
             </tr>
+            {% for data in datas %}
             <tr>
-                <td>Name</td>
-                <td>{{ data.name }}</td>
+                <td>{{ data.key }}</td>
+                <td>{{ data.value }}</td>
             </tr>
-            <tr>
-                <td>Source</td>
-                <td>{{ data.source }}</td>
-            </tr>
-            <tr>
-                <td>Site Name</td>
-                <td>{{ data.site_name }}</td>
-            </tr>
-            <tr>
-                <td>Time</td>
-                <td>{{ data.time }}</td>
-            </tr>
-            <tr>
-                <td>Today All Requests</td>
-                <td>{{ data.today_all_request }}</td>
-            </tr>
-            <tr>
-                <td>Today Success Requests</td>
-                <td>{{ data.today_success_request }}</td>
-            </tr>
-            <tr>
-                <td>Today Fail Requests</td>
-                <td>{{ data.today_fail_request }}</td>
-            </tr>
-            <tr>
-                <td>This Time All Requests</td>
-                <td>{{ data.this_time_all_request }}</td>
-            </tr>
+            {% endfor %}
         </table>
+        <div class="pagination">
+            {% if current_page > 1 %}
+            <a href="?page={{ current_page - 1 }}">Previous</a>
+            {% endif %}
+            {% for i in range(1, total_pages + 1) %}
+            <a href="?page={{ i }}" {% if i == current_page %}class="active"{% endif %}>{{ i }}</a>
+            {% endfor %}
+            {% if current_page < total_pages %}
+            <a href="?page={{ current_page + 1 }}">Next</a>
+            {% endif %}
+        </div>
     </div>
 </body>
 </html>
