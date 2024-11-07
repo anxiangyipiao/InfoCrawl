@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="text-center mb-4">Dashboard</h1>
+<h1 class="text-center mb-4">控制台</h1>
 
 <section class="dashboard-section">
     <!-- Today All Requests -->
     <div class="card">
-        <span class="icon"><i class="fas fa-globe"></i></span>
         <div class="card-content">
             <h3>今天更新总数</h3>
             <p>{{ info.today_all_request }}</p>
@@ -14,8 +13,7 @@
     </div>
 
     <!-- Today Success Requests -->
-    <div class="card">
-        <span class="icon"><i class="fas fa-check-circle"></i></span>
+    <div class="card"> 
         <div class="card-content">
             <h3>今天爬取成功</h3>
             <p>{{ info.today_success_request }}</p>
@@ -24,7 +22,6 @@
 
     <!-- Today Fail Requests -->
     <div class="card">
-        <span class="icon"><i class="fas fa-times-circle"></i></span>
         <div class="card-content">
             <h3>今天爬取失败</h3>
             <p>{{ info.today_fail_request }}</p>
@@ -33,7 +30,6 @@
 
     <!-- Running Spiders -->
     <div class="card">
-        <span class="icon"><i class="fas fa-spider"></i></span>
         <div class="card-content">
             <h3>正在运行爬虫</h3>
             <p>{{ spiders|length }}</p>
