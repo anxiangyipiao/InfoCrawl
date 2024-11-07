@@ -55,3 +55,5 @@ def running_spiders():
     # 获取正在运行的爬虫
     running_spiders = LogCollectionService.get_running_spiders()
     return running_spiders
+
+
