@@ -60,18 +60,18 @@ class LogCollectionService(object):
     
 
     @classmethod
-    def get_key_by_today(cls):
+    def get_key_by_datetime(cls,date: datetime):
+        
         # 获取今天所有数据
-           
-            now = datetime.now()
-            start_of_today = now.replace(hour=0, minute=0, second=0, microsecond=0)
-            end_of_today = start_of_today + timedelta(days=1) - timedelta(microseconds=1)
+            start_of_day = date.replace(hour=0, minute=0, second=0, microsecond=0)
+            end_of_day = start_of_day + timedelta(days=1) - timedelta(microseconds=1)
         
             # 从有序集合中获取今天的键
-            keys = task_redis_server.zrangebyscore(sorted_set_key, start_of_today.timestamp(), end_of_today.timestamp())
+            keys = task_redis_server.zrangebyscore(sorted_set_key, start_of_day.timestamp(), end_of_day.timestamp())
 
             return keys
   
+
     @classmethod
     def analyse_data(cls,datas):
         # 今天爬取的所有数据
@@ -88,7 +88,7 @@ class LogCollectionService(object):
             today_all_request += data['today_all_request']
             today_success_request += data['today_success_request']
             today_fail_request += data['today_fail_request']
-            # all_failed_urls.extend(data['failed_urls'])
+            all_failed_urls.extend(data['failed_urls'])
 
         return today_all_request, today_success_request, today_fail_request, all_failed_urls
     

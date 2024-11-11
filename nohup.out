@@ -1,0 +1,191 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.23.215.56:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+58.213.106.155 - - [08/Nov/2024 11:46:03] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:14] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:15] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:16] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:16] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:17] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:40] "GET /details?page=2 HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:47] "GET /details?page=1 HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:49] "GET /details?page=1 HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:49] "GET /details?page=1 HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:47:50] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:48:00] "GET /details?page=2 HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:48:02] "GET /details?page=1 HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:48:05] "GET /details?page=1 HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:48:07] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 11:48:18] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:48:26] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:48:27] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:48:27] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:49:35] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:49:36] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:49:38] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:50:07] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:50:43] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:51:08] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:51:21] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 13:55:20] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:21:09] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:21:15] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:21:16] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:21:16] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:21:17] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:21:17] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:13] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:14] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:15] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:15] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:16] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:17] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:18] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:20] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:28] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:30] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:26:31] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:27:20] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:27:20] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:27:21] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:27:22] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:34:52] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:34:53] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:34:54] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:34:55] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:11] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:12] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:13] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:13] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:14] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:37] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:38] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:39] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:40] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:41] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 14:35:42] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:13:32] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:13:33] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:13:34] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:13:35] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:13:36] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:13:47] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:59:37] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:59:38] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:59:41] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 15:59:52] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 16:10:28] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 16:10:29] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 16:16:56] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 16:55:08] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 17:17:03] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [08/Nov/2024 17:17:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [08/Nov/2024 19:54:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 19:54:39] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 19:55:55] "GET /details HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 19:56:31] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 19:57:42] "GET /details HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 19:57:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 19:57:51] "GET /details HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 19:58:53] "GET /details HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:01:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:01:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:01:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:01:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:01:59] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:02:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:02:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:02:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:02:09] "GET /details HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:02:29] "GET /details?page=2 HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:02:32] "GET /details?page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:02:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:02:35] "GET /details HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:03:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:05:50] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:05:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:05:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:05:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:28:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:28:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:28:50] "GET /details HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:29:04] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 20:29:05] "GET /details HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 21:56:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Nov/2024 21:56:45] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:34:50] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:34:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+58.213.106.155 - - [11/Nov/2024 09:34:52] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:34:54] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:34:54] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:34:59] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:35:02] "GET /details?page=2 HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:35:04] "GET /details?page=1 HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:35:05] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:35:16] "GET / HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:36:50] "GET /details HTTP/1.1" 200 -
+58.213.106.155 - - [11/Nov/2024 09:36:51] "GET / HTTP/1.1" 200 -
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/logic.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/server/LogCollectionService.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/logic.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 967-306-633
+ * Detected change in '/root/InfoCrawl/app/logic.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/root/InfoCrawl/run.py", line 3, in <module>
+    app = create_app()
+  File "/root/InfoCrawl/app/__init__.py", line 9, in create_app
+    from .routes import main as main_blueprint
+  File "/root/InfoCrawl/app/routes.py", line 1, in <module>
+    from app.logic import get_detal_data,get_today_info,running_spiders,get_today_fail_urls
+  File "/root/InfoCrawl/app/logic.py", line 41
+    today = 
+            ^
+SyntaxError: invalid syntax

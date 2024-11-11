@@ -1,3 +1,4 @@
+from datetime import datetime
 from app.server.LogCollectionService import LogCollectionService
 
 
@@ -22,7 +23,8 @@ def get_detal_data(page=1, PAGE_SIZE=10):
         return datas, count
 
 
-def get_today_info():
+def get_date_info(date: datetime):
+        
         """
         获取当天的日志信息。
         
@@ -37,39 +39,17 @@ def get_today_info():
                 - all_failed_urls (list): 所有失败的URL列表。
         
         """
-        keys = LogCollectionService.get_key_by_today()
+        if date is None:  
+            today = datetime.now()
+
+        keys = LogCollectionService.get_key_by_datetime(today)
         datas = LogCollectionService.get_data_by_key(keys)
-        today_all_request, today_success_request, today_fail_request, _ = LogCollectionService.analyse_data(datas)
+        today_all_request, today_success_request, today_fail_request, all_failed_urls = LogCollectionService.analyse_data(datas)
         
         dict = {
             'today_all_request': today_all_request,
             'today_success_request': today_success_request,
             'today_fail_request': today_fail_request,
-        }
-         
-        return dict
-
-
-def get_today_fail_urls():
-        """
-        获取当天的日志信息。
-        
-        Args:
-            无参数。
-        
-        Returns:
-            dict: 包含当天请求信息的字典，包含以下键：
-                - today_all_request (int): 当天总请求数。
-                - today_success_request (int): 当天成功请求数。
-                - today_fail_request (int): 当天失败请求数。
-                - all_failed_urls (list): 所有失败的URL列表。
-        
-        """
-        keys = LogCollectionService.get_key_by_today()
-        datas = LogCollectionService.get_data_by_key(keys)
-        today_all_request, today_success_request, today_fail_request, all_failed_urls = LogCollectionService.analyse_data(datas)
-        
-        dict = {
             'all_failed_urls': all_failed_urls,
         }
          

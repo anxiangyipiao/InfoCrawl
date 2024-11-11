@@ -1,4 +1,4 @@
-from app.logic import get_detal_data,get_today_info,running_spiders,get_today_fail_urls
+from app.logic import get_detal_data,get_date_info,running_spiders
 from flask import Blueprint, render_template, request
 
 
@@ -8,7 +8,7 @@ main = Blueprint('main', __name__)
 def index():
    
     # 获取当天的日志信息
-    info = get_today_info()
+    info = get_date_info()
 
     # 获取正在运行的爬虫
     spiders = running_spiders()
@@ -26,14 +26,3 @@ def getDetailInfo():
     total_pages = (count + PAGE_SIZE - 1) // PAGE_SIZE   
     return render_template('details.html', datas=datas, count=count, total_pages=total_pages, current_page=page)
 
-# @main.route('/running')
-# def running_spiders_route():
-#     # 获取正在运行的爬虫
-#     spiders = running_spiders()
-#     return render_template('running_spiders.html', spiders=spiders)
-
-@main.route('/failed_urls')
-def get_failed_urls():
-    # 获取失败的URL
-    urls = get_today_fail_urls()
-    return render_template('failed_urls.html', urls=urls)
