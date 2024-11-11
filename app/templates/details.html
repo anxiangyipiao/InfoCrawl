@@ -117,13 +117,16 @@
             </div>
             <div class="pagination d-flex justify-content-center mt-4">
                 {% if current_page > 1 %}
-                <a href="?page={{ current_page - 1 }}" class="btn btn-primary mr-2">Previous</a>
+                <a href="?page={{ current_page - 1 }}" class="btn btn-primary mr-2">上一页</a>
+                {% endif %}
+                {% if current_page > 1 %}
+                <a href="?page={{ 0 }}" class="btn btn-primary mr-2">首页</a>
                 {% endif %}
                 {% for i in range(1, total_pages + 1) %}
                 <a href="?page={{ i }}" class="btn btn-secondary {% if i == current_page %}active{% endif %}">{{ i }}</a>
                 {% endfor %}
                 {% if current_page < total_pages %}
-                <a href="?page={{ current_page + 1 }}" class="btn btn-primary ml-2">Next</a>
+                <a href="?page={{ current_page + 1 }}" class="btn btn-primary ml-2">下一页</a>
                 {% endif %}
             </div>
         </div>
