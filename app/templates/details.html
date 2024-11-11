@@ -13,10 +13,16 @@
     .table th {
         font-size: 15px; /* 设置表头字体大小 */
         font-weight: bold; /* 设置表头字体加粗 */
-        text-align: center; /* 设置表头文字居中 */
-        vertical-align: middle; /* 垂直居中 */
         background-color: #f2f9ff; /* 淡蓝色背景 */
+        padding: 5px; /* 减少内边距以适应小屏幕 */
+        text-align: center; /* 文字居中显示 */
     }
+
+     /* 调整小屏幕下的数据单元格字体大小 */
+     .table td {
+            font-size: 18px; /* 小屏幕下的数据单元格字体大小 */
+            padding: 10px; /* 减少内边距以适应小屏幕 */
+        }
 
     .table th:nth-child(1) { width: 15%; } /* 爬虫名称 */
     .table th:nth-child(2) { width: 10%; } /* 来源 */
@@ -66,7 +72,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="mt-5">
     <h1 class="text-center mb-4">运行日志</h1>
     <div class="shadow-sm">
         <div class="card-body">
@@ -123,5 +128,4 @@
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
