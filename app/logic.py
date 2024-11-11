@@ -23,7 +23,7 @@ def get_detal_data(page=1, PAGE_SIZE=10):
         return datas, count
 
 
-def get_date_info(date: datetime):
+def get_date_info(date: datetime = None):
         
         """
         获取当天的日志信息。
