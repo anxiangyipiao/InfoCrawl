@@ -1,4 +1,4 @@
-from app.logic import get_detal_data,get_date_info,running_spiders
+from app.logic import get_detal_data,get_date_info,running_spiders,get_five_day_data
 from flask import Blueprint, render_template, request
 
 
@@ -14,6 +14,25 @@ def index():
     spiders = running_spiders()
     
     return render_template('index.html',info=info, spiders=spiders)
+
+@main.route('/five_day')
+def get_day_data():
+    
+
+    datetime_list2, today_all_request, today_success_request, today_fail_request = get_five_day_data(5)
+
+
+    dict = {
+        'datetime_list2': datetime_list2,
+        'all_request': today_all_request,
+        'success_request': today_success_request,
+        'fail_request': today_fail_request
+    }
+
+
+
+    return render_template('index.html', dict=dict)
+
 
 
 @main.route('/details')
