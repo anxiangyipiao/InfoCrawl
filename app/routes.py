@@ -1,5 +1,6 @@
 from app.logic import get_detal_data,get_date_info,running_spiders,get_five_day_data
 from flask import Blueprint, render_template, request
+import json
 
 
 main = Blueprint('main', __name__)
@@ -8,6 +9,7 @@ main = Blueprint('main', __name__)
 def index():
    
     # 获取当天的日志信息
+
     info = get_date_info()
     
     # 获取正在运行的爬虫
@@ -29,6 +31,7 @@ def get_day_data():
         'fail_request': today_fail_request
     }
 
+    dict = json.dumps(dict)
 
 
     return render_template('index.html', dict=dict)

@@ -23,7 +23,7 @@ def get_detal_data(page=1, PAGE_SIZE=10):
         return datas, count
 
 
-def get_date_info(date: datetime = None):
+def get_date_info(today: datetime = None):
         
         """
         获取当天的日志信息。
@@ -39,7 +39,7 @@ def get_date_info(date: datetime = None):
                 - all_failed_urls (list): 所有失败的URL列表。
         
         """
-        if date is None:  
+        if today is None:  
             today = datetime.now()
 
         keys = LogCollectionService.get_key_by_datetime(today)
@@ -65,7 +65,7 @@ def get_five_day_data(data:int = 5):
     
     datetime_list2 = [] 
     for i in range(data):
-        datetime_list2.append(datetime.now()-timedelta(days=i).strftime('%Y-%m-%d'))
+        datetime_list2.append((datetime.now()-timedelta(days=i)).strftime('%Y-%m-%d'))
 
     datas = []
     for i in datetime_list1:
