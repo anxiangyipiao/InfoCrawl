@@ -56,38 +56,19 @@ def get_date_info(today: datetime = None):
         return dict
 
 
-def get_five_day_data(data:int = 5):
+def save_day_data(data:int = 5):
     
     # 获取最近五天的datetime
     datetime_list1 = []
     for i in range(data):
         datetime_list1.append(datetime.now()-timedelta(days=i))
-    
-    datetime_list2 = [] 
-    for i in range(data):
-        datetime_list2.append((datetime.now()-timedelta(days=i)).strftime('%Y-%m-%d'))
 
-    datas = []
     for i in datetime_list1:
-        date = get_date_info(i)
-        datas.append(date)
-
-    # today_all_request
-    today_all_request = []
-    for i in datas:
-        today_all_request.append(i['today_all_request'])
-        
-    today_success_request = []
-    for i in datas:
-        today_success_request.append(i['today_all_request'])
-    
-    today_fail_request = []
-    for i in datas:
-        today_fail_request.append(i['today_all_request'])
-
-
-
-    return datetime_list2, today_all_request, today_success_request, today_fail_request
+        dict = get_date_info(i)
+        LogCollectionService.save_date_log(
+             datetime=i,
+             value=dict
+        )
 
 
 def running_spiders():

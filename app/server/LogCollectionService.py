@@ -5,6 +5,7 @@ import json
 task_redis_server = RedisConnectionManager.get_connection()
 sorted_set_key = 'key_sorted_set'
 running = 'running_spiders'
+date_log = 'date_log'
 
 
 class LogCollectionService(object):
@@ -103,3 +104,11 @@ class LogCollectionService(object):
         else:
             return []    
 
+
+    @classmethod
+    def save_date_log(cls, datetime:datetime,value:dict):
+
+        # 将数据存入哈希表
+        datetimes = datetime.strftime('%Y-%m-%d')
+        task_redis_server.hset(date_log, datetimes, json.dumps(value))
+       
