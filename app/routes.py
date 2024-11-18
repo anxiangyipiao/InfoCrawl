@@ -1,4 +1,4 @@
-from app.logic import get_detal_data,get_date_info,running_spiders
+from app.logic import get_detal_data,get_date_info,running_spiders,read_day_data
 from flask import Blueprint, render_template, request
 import json
 
@@ -11,6 +11,8 @@ def index():
     # 获取当天的日志信息
 
     info = get_date_info()
+
+    read_day_data()
  
     # 获取正在运行的爬虫
     spiders = running_spiders()

@@ -112,15 +112,20 @@ class LogCollectionService(object):
         datetimes = datetime.strftime('%Y-%m-%d')
         task_redis_server.hset(date_log, datetimes, json.dumps(value))
     
+    @classmethod
     def get_date_log(cls):
+
         # 读取所有数据
         data = task_redis_server.hgetall(date_log)
-        # 按照key从大到小排列
 
-        # 将字典的键转换为字符串并排序
-        sorted_keys = sorted(data.keys(), reverse=True)
+        # 将字典的键转换为字符串
+        data = {key.decode('utf-8'): value.decode('utf-8') for key, value in data.items()}
+
+
+        # 将字典的键转换为日期并排序
+        sorted_keys = sorted(data.keys(), key=lambda x: datetime.strptime(x, '%Y-%m-%d'), reverse=True)
         
         # 创建一个新的有序字典
         sorted_data = {key: data[key] for key in sorted_keys}
-        
+      
         return sorted_data

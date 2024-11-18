@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import json
 from app.server.LogCollectionService import LogCollectionService
 
 
@@ -71,14 +72,26 @@ def save_day_data(data:int = 5):
         )
 
 
-def read_day_data(data:int = 5):
-    datetime_list2 = []
-    for i in range(data):
-        datetime_list2.append(datetime.now()-timedelta(days=i))
+def read_day_data():
+   
+    dict = LogCollectionService.get_date_log()
 
-    for i in datetime_list2:
-        dict = LogCollectionService.get_date_log(i)
-        print(dict)
+    datetimes = list(dict.keys())
+    today_all_request = []
+    today_success_request = []
+    today_fail_request = []
+
+    for i in datetimes:
+        today_success_request.append(json.loads(dict[i])['today_success_request'])
+        today_fail_request.append(json.loads(dict[i])['today_fail_request'])
+        today_all_request.append(json.loads(dict[i])['today_all_request'])
+        
+
+
+    print(datetimes)
+    print(today_all_request)
+    print(today_success_request)
+    print(today_fail_request)
 
 def running_spiders():
     # 获取正在运行的爬虫
