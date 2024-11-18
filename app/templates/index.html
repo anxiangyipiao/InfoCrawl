@@ -38,10 +38,60 @@
     
 </section>
 
+<div> 
+    <canvas id="requestsChart" width="400" height="200"></canvas>
+</div>
+
+
 {% endblock %}
 
 
 {% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const ctx = document.getElementById('requestsChart').getContext('2d');
+
+    const chartData ={{ chart_data|tojson|safe }};
+
+    const dates = chartData.datetimes;
+    const allRequests = chartData.all_request;
+    const successRequests = chartData.success_request;
+    const failRequests = chartData.fail_request;
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: '所有请求',
+                data: allRequests,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: false
+            }, {
+                label: '成功请求',
+                data: successRequests,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                fill: false
+            }, {
+                label: '失败请求',
+                data: failRequests,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});
 </script>
 {% endblock %}

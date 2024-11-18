@@ -76,22 +76,27 @@ def read_day_data():
    
     dict = LogCollectionService.get_date_log()
 
+
     datetimes = list(dict.keys())
     today_all_request = []
     today_success_request = []
     today_fail_request = []
 
+
     for i in datetimes:
         today_success_request.append(json.loads(dict[i])['today_success_request'])
         today_fail_request.append(json.loads(dict[i])['today_fail_request'])
         today_all_request.append(json.loads(dict[i])['today_all_request'])
-        
+    
 
+    chart = {}
+    chart['all_request'] = today_all_request
+    chart['success_request'] = today_success_request
+    chart['fail_request'] = today_fail_request
+    chart['datetimes'] = datetimes
 
-    print(datetimes)
-    print(today_all_request)
-    print(today_success_request)
-    print(today_fail_request)
+    return chart
+   
 
 def running_spiders():
     # 获取正在运行的爬虫

@@ -12,12 +12,12 @@ def index():
 
     info = get_date_info()
 
-    read_day_data()
- 
+    chart = read_day_data()
+
     # 获取正在运行的爬虫
     spiders = running_spiders()
     
-    return render_template('index.html',info=info, spiders=spiders)
+    return render_template('index.html',info=info, spiders=spiders, chart_data=chart)
 
 
 
