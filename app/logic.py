@@ -71,6 +71,15 @@ def save_day_data(data:int = 5):
         )
 
 
+def read_day_data(data:int = 5):
+    datetime_list2 = []
+    for i in range(data):
+        datetime_list2.append(datetime.now()-timedelta(days=i))
+
+    for i in datetime_list2:
+        dict = LogCollectionService.get_date_log(i)
+        print(dict)
+
 def running_spiders():
     # 获取正在运行的爬虫
     running_spiders = LogCollectionService.get_running_spiders()
